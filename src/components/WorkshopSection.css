@@ -1,0 +1,173 @@
+/* ==========================================================================
+   WORKSHOP SECTION STYLES
+   ========================================================================== */
+
+.workshop-section {
+  width: 100%;
+  padding: 56px 0 64px;
+  border-top: 1px solid rgba(181, 154, 90, 0.18);
+  position: relative;
+  background: rgba(20, 22, 17, 0.5);
+}
+
+.workshop-header {
+  max-width: 680px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.workshop-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--color-aged-brass);
+  letter-spacing: 0.08em;
+}
+
+.tag-number {
+  background: rgba(181, 154, 90, 0.15);
+  border: 1px solid rgba(181, 154, 90, 0.35);
+  padding: 2px 6px;
+  border-radius: var(--radius-xs);
+  font-weight: 700;
+}
+
+.workshop-title {
+  font-size: 32px;
+  color: var(--color-warm-ivory);
+  letter-spacing: -0.015em;
+  margin: 0;
+  line-height: 1.15;
+}
+
+@media (min-width: 640px) {
+  .workshop-title {
+    font-size: 38px;
+  }
+}
+
+.workshop-desc {
+  font-size: 14.5px;
+  color: var(--color-parchment-faded);
+  line-height: 1.6;
+}
+
+/* Workbench Grid */
+.workshop-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .workshop-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1100px) {
+  .workshop-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.workbench-card {
+  background: #171913;
+  border: 1px solid rgba(181, 154, 90, 0.2);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: all var(--transition-standard);
+}
+
+.workbench-card:hover {
+  border-color: rgba(181, 154, 90, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.workbench-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  background: #13140f;
+  border-bottom: 1px solid rgba(181, 154, 90, 0.16);
+}
+
+.cat-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cat-name {
+  font-size: 11.5px;
+  color: var(--color-warm-ivory);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.card-index {
+  font-size: 10px;
+  color: var(--color-aged-brass);
+}
+
+.workbench-items {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.workbench-item-row {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 11.5px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed rgba(181, 154, 90, 0.1);
+}
+
+.workbench-item-row:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.item-primary-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.item-name {
+  color: var(--color-warm-ivory);
+  font-size: 12px;
+}
+
+.item-status-pill {
+  font-size: 9.5px;
+  color: var(--color-aged-brass);
+  background: rgba(181, 154, 90, 0.1);
+  padding: 1px 6px;
+  border-radius: 2px;
+  border: 1px solid rgba(181, 154, 90, 0.2);
+}
+
+.item-annotation {
+  font-size: 10.5px;
+  color: var(--color-parchment-faded);
+  line-height: 1.4;
+}
+
+.annotation-leader {
+  color: var(--color-rust-red);
+  font-weight: 700;
+}
