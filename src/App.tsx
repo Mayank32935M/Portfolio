@@ -1,83 +1,48 @@
-import React, { useState } from 'react';
-import type { ModalKey, ProjectItem } from './types';
-import { HeroSection } from './components/HeroSection';
-import { KeyboardPortfolio } from './components/KeyboardPortfolio';
-import { JournalModal } from './components/JournalModal';
-import { ProjectArchive } from './components/ProjectArchive';
-import { WorkshopSection } from './components/WorkshopSection';
-import { PhilosophySection } from './components/PhilosophySection';
-import { ClosingSection } from './components/ClosingSection';
-import { ProjectDetailModal } from './components/ProjectDetailModal';
-import './App.css';
+import SmoothScroll from "@/components/smooth-scroll";
+import AnimatedBackground from "@/components/animated-background";
+import Particles from "@/components/Particles";
+import Header from "@/components/header/header";
+import Footer from "@/components/footer/footer";
+import HeroSection from "@/components/sections/hero";
+import SkillsSection from "@/components/sections/skills";
+import ProjectsSection from "@/components/sections/projects";
+import ExperienceSection from "@/components/sections/experience";
+import ContactSection from "@/components/sections/contact";
+import { usePerfProfile } from "@/hooks/use-perf-profile";
 
-export const App: React.FC = () => {
-  const [activeModal, setActiveModal] = useState<ModalKey | null>(null);
-  const [focusedKey, setFocusedKey] = useState<ModalKey>('P');
-  const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
-
-  const scrollToKeyboard = () => {
-    const el = document.getElementById('keyboard-console');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToProjects = () => {
-    const el = document.getElementById('project-archive');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+export function App() {
+  const { particleCount, maxDpr } = usePerfProfile();
 
   return (
-    <div className="portfolio-app-root">
-      {/* 1. SIGNATURE HERO: Approved Halftone Portrait Scrapbook & Terminal Console */}
-      <HeroSection
-        onScrollToKeyboard={scrollToKeyboard}
-        onScrollToProjects={scrollToProjects}
-      />
+    <SmoothScroll>
+      {/* 1. Ambient Background Particles */}
+      {particleCount > 0 && (
+        <Particles
+          className="fixed inset-0 -z-10 animate-fade-in"
+          quantity={particleCount}
+          maxDpr={maxDpr}
+        />
+      )}
 
-      {/* 2. INTERACTIVE PORT / FOLIO KEYBOARD CONSOLE (Immediately Beneath Hero) */}
-      <KeyboardPortfolio
-        activeModal={activeModal}
-        onOpenModal={(key) => setActiveModal(key)}
-        focusedKey={focusedKey}
-        setFocusedKey={(key) => setFocusedKey(key)}
-      />
+      {/* 2. Interactive 3D WebGL Mechanical Keyboard Canvas */}
+      <AnimatedBackground />
 
-      {/* 3. SUPPORTING ARCHIVAL SECTIONS */}
-      {/* Project Archive Dossiers with Evidence & Screenshots */}
-      <ProjectArchive
-        onOpenProjectDetail={(project) => setSelectedProject(project)}
-      />
+      {/* 3. Fixed Navigation Header */}
+      <Header />
 
-      {/* Workshop & Technical Workstation Profile */}
-      <WorkshopSection />
+      {/* 4. Main Content Sections */}
+      <main className="canvas-overlay-mode relative z-10">
+        <HeroSection />
+        <SkillsSection />
+        <ProjectsSection />
+        <ExperienceSection />
+        <ContactSection />
+      </main>
 
-      {/* Working Philosophy & Pedagogy */}
-      <PhilosophySection />
-
-      {/* Field Journal Closing Page & Contact */}
-      <ClosingSection />
-
-      {/* IN-PAGE MODALS */}
-      {/* Keyboard Modal (P, O, R, T, F, O, L, I, O) */}
-      <JournalModal
-        activeKey={activeModal}
-        onClose={() => setActiveModal(null)}
-        onSelectProject={(project: ProjectItem) => {
-          setActiveModal(null);
-          setSelectedProject(project);
-        }}
-      />
-
-      {/* Detailed Project Dossier Modal */}
-      <ProjectDetailModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
-    </div>
+      {/* 5. Footer */}
+      <Footer />
+    </SmoothScroll>
   );
-};
+}
 
 export default App;
