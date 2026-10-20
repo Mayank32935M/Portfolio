@@ -10,9 +10,24 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@chibi3d/runtime": "^0.5.0",
+    "@gsap/react": "^2.1.2",
+    "@react-three/fiber": "^9.8.2",
+    "@types/three": "^0.186.0",
+    "autoprefixer": "^10.6.1",
+    "clsx": "^2.1.1",
+    "gsap": "^3.15.0",
+    "lenis": "^1.3.27",
     "lucide-react": "^1.60.0",
+    "motion": "^14.4.0",
+    "postcss": "^8.5.31",
     "react": "^19.3.1",
-    "react-dom": "^19.3.1"
+    "react-dom": "^19.3.1",
+    "react-icons": "^5.7.0",
+    "tailwind-merge": "^3.7.0",
+    "tailwindcss": "^3.4.19",
+    "tailwindcss-animate": "^1.0.7",
+    "three": "^0.185.1"
   },
   "devDependencies": {
     "@types/node": "^24.19.2",
