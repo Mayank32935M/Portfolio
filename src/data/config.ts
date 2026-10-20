@@ -1,0 +1,36 @@
+export const config = {
+  name: "Mayank Dabas",
+  author: "Mayank Dabas",
+  title: "Mayank Dabas — Interactive 3D Portfolio | AI & ML Engineer",
+  site: "https://mayankdabas.dev",
+  ogImg: "/assets/projects/forensic_x_dashboard.png",
+  description: {
+    short: "AI & ML Engineer and Creative Developer at USAR, GGSIPU. Building intelligent, reliable software systems.",
+    long: "First-year B.Tech + M.Tech Dual Degree student specializing in Artificial Intelligence and Machine Learning at University School of Automation & Robotics (USAR), GGSIPU, Delhi. Creator of FORENSIC-X, Suraksha Sense, and Stivium IDE.",
+  },
+  keywords: [
+    "Mayank Dabas",
+    "Portfolio",
+    "AI/ML Engineer",
+    "Machine Learning",
+    "USAR GGSIPU",
+    "FORENSIC-X",
+    "Suraksha Sense",
+    "Stivium IDE",
+    "Three.js",
+    "3D Portfolio",
+    "Full Stack Developer",
+  ],
+  social: {
+    github: "https://github.com/Mayank32935M",
+    linkedin: "https://linkedin.com/in/mayank-dabas",
+    email: "mayankdabas32935@gmail.com",
+    twitter: "https://x.com",
+  },
+  education: {
+    institution: "University School of Automation and Robotics (USAR), GGSIPU",
+    degree: "B.Tech + M.Tech Dual Degree in Artificial Intelligence & Machine Learning (AI/ML)",
+    period: "2025 — Present",
+    location: "East Delhi Campus, Delhi, India",
+  },
+};
