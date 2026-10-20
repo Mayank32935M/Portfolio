@@ -1,0 +1,11 @@
+/* ==========================================================================
+   APP CONTAINER & GLOBAL LAYOUT
+   ========================================================================== */
+
+.portfolio-app-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--color-charcoal);
+}
